@@ -1,2 +1,2 @@
 int age = 25;
-console.WriteLine($"제 나이는 {age}입니다);
+Console.WriteLine($"제 나이는 {age}입니다);
