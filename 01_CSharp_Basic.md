@@ -1,90 +1,126 @@
-# C# Beginner Concepts
+# C# 초심자 기초 개념
 
-## Variables
-Variables are used to store data values. In C#, a variable must be declared before it can be used.
+## 1️⃣ 변수 (Variable)란?
 
-### Declaration and Initialization
-To declare a variable in C#, you use the following syntax:
-```csharp
-int x; // Declaration
-x = 5; // Initialization
+**변수**는 데이터를 저장하는 상자라고 생각하면 됩니다. 프로그램에서 데이터를 저장하고 싶을 때 사용합니다.
+
+### 변수 선언 방법
 ```
-You can also declare and initialize a variable in one line:
-```csharp
-int y = 10;
+데이터타입 변수이름 = 값;
 ```
 
-## Data Types
-C# is a strongly typed language, which means that every variable must have a data type. Here are some common data types:
+예를 들어:
+- `int age = 25;` → 정수형 변수 age에 25를 저장
+- `string name = "이승원";` → 문자형 변수 name에 "이승원"을 저장
+- `float height = 175.5f;` → 소수형 변수 height에 175.5를 저장
 
-- **int**: Represents integer values (whole numbers).
-    ```csharp
-    int age = 30;
-    ```
-- **double**: Represents floating-point numbers (numbers with decimals).
-    ```csharp
-    double price = 19.99;
-    ```
-- **char**: Represents a single character.
-    ```csharp
-    char initial = 'A';
-    ```
-- **string**: Represents a sequence of characters (text).
-    ```csharp
-    string name = "John";
-    ```
-- **bool**: Represents a boolean value (true or false).
-    ```csharp
-    bool isAvailable = true;
-    ```
+---
 
-## Basic Syntax
-C# syntax is similar to other C-based languages. Here are some key features:
+## 2️⃣ 데이터타입 (Data Type)이란?
 
-### Semicolons
-Each statement in C# must end with a semicolon (`;`). For example:
-```csharp
-Console.WriteLine("Hello, World!");
+데이터타입은 변수에 들어갈 수 있는 **데이터의 종류**를 말합니다. C#은 엄격하게 데이터타입을 정해줘야 합니다.
+
+### 주요 데이터타입들
+
+| 타입 | 설명 | 사용 예시 |
+|------|------|---------|
+| **int** | 정수 (음수, 양수, 0) | 나이, 숫자, 점수 |
+| **float** | 소수점 (작은 범위) | 높이, 무게, 온도 |
+| **double** | 소수점 (큰 범위, 더 정확함) | 가격, 정확한 계산 |
+| **string** | 문자열 (글자, 문장) | 이름, 주소, 메시지 |
+| **bool** | 참/거짓 (true/false) | 조건 판단 |
+| **char** | 한 글자만 | 등급(A, B, C) |
+
+---
+
+## 3️⃣ 연산자 (Operator)란?
+
+연산자는 데이터를 **계산하거나 비교**할 때 사용하는 기호입니다.
+
+### 산술 연산 (수학 계산)
+- **+** : 더하기 (10 + 5 = 15)
+- **-** : 빼기 (10 - 5 = 5)
+- **\*** : 곱하기 (10 \* 5 = 50)
+- **/** : 나누기 (10 / 5 = 2)
+- **%** : 나머지 (10 % 3 = 1)
+
+### 비교 연산 (비교하기)
+- **>** : 더 크다 (10 > 5 = 참)
+- **<** : 더 작다 (10 < 5 = 거짓)
+- **==** : 같다 (10 == 10 = 참)
+- **!=** : 다르다 (10 != 5 = 참)
+
+### 논리 연산 (참/거짓 판단)
+- **&&** : 그리고 (둘 다 참이어야 참)
+- **||** : 또는 (하나라도 참이면 참)
+- **!** : 아니다 (참을 거짓으로, 거짓을 참으로)
+
+---
+
+## 4️⃣ 출력 (Console.WriteLine)이란?
+
+**Console.WriteLine()**은 프로그램의 결과를 화면에 보여주는 명령어입니다.
+
+### 사용 방법
+```
+Console.WriteLine("화면에 보여줄 내용");
 ```
 
-### Comments
-You can add comments in your code using `//` for single-line comments and `/* ... */` for multi-line comments:
-```csharp
-// This is a single-line comment
-/* This is a multi-line comment */
+예를 들어:
+- `Console.WriteLine("안녕하세요!");` → "안녕하세요!"가 화면에 출력됨
+- `Console.WriteLine(25);` → 숫자 25가 화면에 출력됨
+- `Console.WriteLine("나이는 " + age);` → 문자와 변수를 합쳐서 출력
+
+---
+
+## 5️⃣ 프로그램의 기본 구조
+
 ```
-
-### Control Structures
-Control structures such as `if`, `else`, `for`, and `while` are used to control the flow of execution.
-
-#### Example of a simple `if` statement:
-```csharp
-if (age < 18)
+class Program
 {
-    Console.WriteLine("You are a minor.");
-}
-else
-{
-    Console.WriteLine("You are an adult.");
-}
-```
-
-#### Example of a `for` loop:
-```csharp
-for (int i = 0; i < 5; i++)
-{
-    Console.WriteLine(i);
+    static void Main()
+    {
+        // 여기에 코드를 작성합니다
+    }
 }
 ```
 
-### Method Definition
-In C#, methods are defined using the following syntax:
-```csharp
-public void MyMethod()
-{
-    Console.WriteLine("This is a method.");
-}
-```
+- **class Program** : 프로그램의 큰 틀
+- **static void Main()** : 프로그램이 실행되는 시작 지점
+- **{}** : 중괄호 안에 코드를 작성
 
-## Conclusion
-Understanding these basic concepts of C# will help you build a solid foundation as you start programming. Try experimenting with the code examples to see how they work!
+---
+
+## 📝 핵심 정리
+
+| 개념 | 설명 | 예시 |
+|------|------|------|
+| **변수** | 데이터를 저장하는 상자 | int age = 25; |
+| **데이터타입** | 변수에 들어갈 데이터의 종류 | int, string, bool |
+| **연산자** | 데이터를 계산하거나 비교 | +, -, *, ==, && |
+| **출력** | 결과를 화면에 보여주기 | Console.WriteLine(); |
+
+---
+
+## 🎯 학습 순서
+
+1. ✅ **기초 개념** (변수, 데이터타입) - **지금 여기!**
+2. ⏭️ **조건문** (if/else) - 상황에 따라 다른 작업 하기
+3. ⏭️ **반복문** (for, while) - 같은 작업을 여러 번 반복
+4. ⏭️ **함수** (메서드) - 자주 쓰는 코드 묶어서 재사용
+5. ⏭️ **배열과 리스트** - 여러 데이터를 한 번에 저장
+
+---
+
+## 💡 온라인에서 직접 해보기
+
+[dotnetfiddle.net](https://dotnetfiddle.net)에 접속해서:
+1. 샘플 코드를 복사-붙여넣기
+2. "Run" 버튼 클릭
+3. 오른쪽에 결과가 출력됨
+
+이렇게 직접 테스트하면서 배우는 것이 가장 빠릅니다! 🚀
+
+---
+
+**다음 주제:** 조건문(if/else) 배우고 싶으세요?
